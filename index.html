@@ -8,62 +8,185 @@
   <title>BUSCA CEP/ENDEREÇO</title>
 </head>
 <body>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">
+      <img src="https://cdn-icons-png.flaticon.com/512/3861/3861399.png" width="30">Busca CEP/Endereço
+    </span>
+  </nav>
   <div class="container">
+    
+    <div class="row">
+      <div class="col-6">
+         <label>Encontre o CEP</label>
+        <div style="border: 1px; border-style: solid; ; border-radius: 10px;"><br>
+          <div class="form-row col-12">
+            <div class="form-group col-8">
+              <input type="text" class="form-control" placeholder="Digite o endereço" id="addressInput">
+            </div>
 
-    <h1>BUSCA CEP/ENDEREÇO</h1>
-
-    <form>
-
-      <label>CEP</label>
-      <div style="border: 1px; border-style: solid; ; border-radius: 10px;"><br>
-        <div class="form-row col-md-6">
-          <div class="form-group col-md-8">
-            <input type="text" class="form-control" placeholder="Digite o endereço" id="addressInput">
+            <div class="form-group col-md-4">
+              <button type="button" onclick="getCEP()" class="btn btn-success">Obter CEP</button>
+            </div>
           </div>
 
-          <div class="form-group col-md-4">
-            <button type="button" onclick="getCEP()" class="btn btn-success">Obter CEP</button>
+          <div class="form-row col-7">
+            <div class="form-group col-6">
+              <h5>CEP:</h5>
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" id="cepOutput"></input>
+            </div>
+          </div>
+
+          <div class="form-row col-md-7">
+            <div class="form-group col-md-6">
+              <h5>Bairro:</h5>
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" id="bairroOutput1"></input>
+            </div>
+          </div>
+
+          <div class="form-row col-md-7">
+            <div class="form-group col-md-6">
+              <h5>Complemento:</h5>
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" id="complementoOutput1"></input>
+            </div>
+          </div>
+
+          <div class="form-row col-md-7">
+            <div class="form-group col-md-6">
+              <h5>Cidade:</h5>
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" id="cidadeOutput1"></input>
+            </div>
+          </div>
+
+          <div class="form-row col-md-7">
+            <div class="form-group col-md-6">
+              <h5>UF:</h5>
+            </div>
+
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" id="ufOutput1"></input>
+            </div>
           </div>
         </div>
-
-        <div class="form-row col-md-3">
-          <div class="form-group col-md-3">
-            <h3>CEP:</h3>
-          </div>
-
-          <div class="form-group col-md-6">
-            <input class="form-control" type="text" id="cepOutput"></input>
-          </div>
-        </div>
-      </div><br><br>
-      
-      <label>Endereço</label>
-      <div style="border: 1px; border-style: solid; ; border-radius: 10px;"><br>
-        <div class="form-row col-md-6">
-          <div class="form-group col-md-8">
-            <input type="text" class="form-control" placeholder="Digite o CEP" id="cepInput">
-          </div>
-
-          <div class="form-group col-md-4">
-            <button type="button" onclick="getAdress()" class="btn btn-success">Obter Endereço</button>
-          </div>
-        </div>
-
-        <div class="form-row col-md-5">
-          <div class="form-group col-md-5">
-            <h3>Endereço:</h3>
-          </div>
-
-          <div class="form-group col-md-7">
-            <input class="form-control" type="text" id="adressOutput"></input>
-          </div>
-        </div>
-
       </div>
-       
-    </form>
-  </div>
 
+        <div class="col-6">
+          <label>Encontre o logradouro</label>
+          <div style="border: 1px; border-style: solid; ; border-radius: 10px;"><br>
+            <div class="form-row col-md-8">
+              <div class="form-group col-md-8">
+                <input type="text" class="form-control" placeholder="Digite o CEP" id="cepInput">
+              </div>
+
+              <div class="form-group col-md-4">
+                <button type="button" onclick="getAdress()" class="btn btn-success">Buscar</button>
+              </div>
+            </div>
+
+            <div class="form-row col-md-7">
+              <div class="form-group col-md-6">
+                <h5>Logradouro:</h5>
+              </div>
+
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" id="logradouroOutput"></input>
+              </div>
+            </div>
+
+            <div class="form-row col-md-7">
+              <div class="form-group col-md-6">
+                <h5>Bairro:</h5>
+              </div>
+
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" id="bairroOutput"></input>
+              </div>
+            </div>
+
+            <div class="form-row col-md-7">
+              <div class="form-group col-md-6">
+                <h5>Complemento:</h5>
+              </div>
+
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" id="complementoOutput"></input>
+              </div>
+            </div>
+
+            <div class="form-row col-md-7">
+              <div class="form-group col-md-6">
+                <h5>Cidade:</h5>
+              </div>
+
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" id="cidadeOutput"></input>
+              </div>
+            </div>
+
+            <div class="form-row col-md-7">
+              <div class="form-group col-md-6">
+                <h5>UF:</h5>
+              </div>
+
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" id="ufOutput"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+  </div> <br>
+
+
+
+    <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+    
+
+  <!-- End of .container -->
 
   <script>
     function getCEP() {
@@ -97,11 +220,6 @@
 
       let address = document.getElementById('cepInput').value;
 
-      let formattedAddress = address
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replace(/ /g, '+');
-
       let viaCEPUrl = `https://viacep.com.br/ws/${address}/json/`;
 
       fetch(viaCEPUrl)
@@ -110,6 +228,10 @@
 
           if (!data.erro) {
             document.getElementById('adressOutput').value = data.logradouro;
+            document.getElementById('complementoOutput').value = data.complemento;
+            document.getElementById('bairroOutput').value = data.bairro;
+            document.getElementById('localidadeOutput').value = data.localidade;
+            document.getElementById('ufOutput').value = data.uf;
             console.log(data.logradouro);
           } else {
             document.getElementById('adressOutput').value = 'Endereço não encontrado para o endereço informado.';
