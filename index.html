@@ -20,62 +20,69 @@
          <label>Encontre o CEP</label>
         <div style="border: 1px; border-style: solid; ; border-radius: 10px;"><br>
           <div class="form-row col-12">
-            <div class="form-group col-8">
+            <div class="form-group col-7">
               <input type="text" class="form-control" placeholder="Digite o endereço" id="addressInput">
             </div>
 
-            <div class="form-group col-md-4">
-              <button type="button" onclick="getCEP()" class="btn btn-success">Obter CEP</button>
+            <div class="form-group col-md-2">
+              <button type="button" onclick="getCEP()" class="btn btn-success">Buscar</button>
+            </div>
+
+            <div class="form-group col-md-3">
+              <select id="inputState" class="form-control">
+                <option selected>Select</option>
+                <option>...</option>
+              </select>
             </div>
           </div>
 
-          <div class="form-row col-7">
-            <div class="form-group col-6">
+          <div class="form-row col-12">
+            <div class="form-group col-4">
               <h5>CEP:</h5>
             </div>
 
-            <div class="form-group col-md-6">
-              <input class="form-control" type="text" id="cepOutput"></input>
+            <div class="form-group col-md-8">
+              <input class="form-control" type="text" id="cepOutput" />
             </div>
           </div>
 
-          <div class="form-row col-md-7">
-            <div class="form-group col-md-6">
+          <div class="form-row col-md-12">
+            <div class="form-group col-md-4">
               <h5>Bairro:</h5>
             </div>
 
-            <div class="form-group col-md-6">
-              <input class="form-control" type="text" id="bairroOutput1"></input>
+            <div class="form-group col-md-8">
+              <input class="form-control" type="text" id="bairroOutput1" />
             </div>
           </div>
 
-          <div class="form-row col-md-7">
-            <div class="form-group col-md-6">
+          <div class="form-row col-md-12">
+            <div class="form-group col-md-4">
               <h5>Complemento:</h5>
             </div>
 
-            <div class="form-group col-md-6">
-              <input class="form-control" type="text" id="complementoOutput1"></input>
+            <div class="form-group col-md-8">
+              <input class="form-control" type="text" id="complementoOutput1" />
             </div>
           </div>
 
-          <div class="form-row col-md-7">
-            <div class="form-group col-md-6">
+          <div class="form-row col-md-12">
+            <div class="form-group col-md-4">
               <h5>Cidade:</h5>
             </div>
 
-            <div class="form-group col-md-6">
-              <input class="form-control" type="text" id="cidadeOutput1"></input>
+            <div class="form-group col-md-8">
+              <input class="form-control" type="text" id="cidadeOutput1" />
             </div>
           </div>
 
-          <div class="form-row col-md-7">
-            <div class="form-group col-md-6">
+          <div class="form-row col-md-12">
+            <div class="form-group col-md-4">
               <h5>UF:</h5>
             </div>
 
-            <div class="form-group col-md-6">
-              <input class="form-control" type="text" id="ufOutput1"></input>
+            <div class="form-group col-md-8">
+              <input class="form-control" type="text" id="ufOutput1" />
             </div>
           </div>
         </div>
@@ -84,63 +91,63 @@
         <div class="col-6">
           <label>Encontre o logradouro</label>
           <div style="border: 1px; border-style: solid; ; border-radius: 10px;"><br>
-            <div class="form-row col-md-8">
-              <div class="form-group col-md-8">
-                <input type="text" class="form-control" placeholder="Digite o CEP" id="cepInput">
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-10">
+                <input type="text" class="form-control" placeholder="Digite o CEP" id="cepInput2">
               </div>
 
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-2">
                 <button type="button" onclick="getAdress()" class="btn btn-success">Buscar</button>
               </div>
             </div>
 
-            <div class="form-row col-md-7">
-              <div class="form-group col-md-6">
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-4">
                 <h5>Logradouro:</h5>
               </div>
 
-              <div class="form-group col-md-6">
-                <input class="form-control" type="text" id="logradouroOutput"></input>
+              <div class="form-group col-md-8">
+                <input class="form-control" type="text" id="adressOutput2" />
               </div>
             </div>
 
-            <div class="form-row col-md-7">
-              <div class="form-group col-md-6">
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-4">
                 <h5>Bairro:</h5>
               </div>
 
-              <div class="form-group col-md-6">
-                <input class="form-control" type="text" id="bairroOutput"></input>
+              <div class="form-group col-md-8">
+                <input class="form-control" type="text" id="bairroOutput2" />
               </div>
             </div>
 
-            <div class="form-row col-md-7">
-              <div class="form-group col-md-6">
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-4">
                 <h5>Complemento:</h5>
               </div>
 
-              <div class="form-group col-md-6">
-                <input class="form-control" type="text" id="complementoOutput"></input>
+              <div class="form-group col-md-8">
+                <input class="form-control" type="text" id="complementoOutput2" />
               </div>
             </div>
 
-            <div class="form-row col-md-7">
-              <div class="form-group col-md-6">
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-4">
                 <h5>Cidade:</h5>
               </div>
 
-              <div class="form-group col-md-6">
-                <input class="form-control" type="text" id="cidadeOutput"></input>
+              <div class="form-group col-md-8">
+                <input class="form-control" type="text" id="cidadeOutput2" />
               </div>
             </div>
 
-            <div class="form-row col-md-7">
-              <div class="form-group col-md-6">
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-4">
                 <h5>UF:</h5>
               </div>
 
-              <div class="form-group col-md-6">
-                <input class="form-control" type="text" id="ufOutput"></input>
+              <div class="form-group col-md-8">
+                <input class="form-control" type="text" id="ufOutput2" />
               </div>
             </div>
           </div>
@@ -206,6 +213,10 @@
 
           if (!data.erro) {
             document.getElementById('cepOutput').value = data["0"].cep;
+            document.getElementById('complementoOutput1').value = data["0"].complemento;
+            document.getElementById('bairroOutput1').value = data["0"].bairro;
+            document.getElementById('cidadeOutput1').value = data["0"].localidade;
+            document.getElementById('ufOutput1').value = data["0"].uf;
             console.log(data["0"].cep);
           } else {
             document.getElementById('cepOutput').value = 'CEP não encontrado para o endereço informado.';
@@ -218,8 +229,7 @@
 
     function getAdress() {
 
-      let address = document.getElementById('cepInput').value;
-
+      let address = document.getElementById('cepInput2').value;
       let viaCEPUrl = `https://viacep.com.br/ws/${address}/json/`;
 
       fetch(viaCEPUrl)
@@ -227,14 +237,13 @@
         .then(data => {
 
           if (!data.erro) {
-            document.getElementById('adressOutput').value = data.logradouro;
-            document.getElementById('complementoOutput').value = data.complemento;
-            document.getElementById('bairroOutput').value = data.bairro;
-            document.getElementById('localidadeOutput').value = data.localidade;
-            document.getElementById('ufOutput').value = data.uf;
-            console.log(data.logradouro);
+            document.getElementById('adressOutput2').value = data.logradouro;
+            document.getElementById('complementoOutput2').value = data.complemento;
+            document.getElementById('bairroOutput2').value = data.bairro;
+            document.getElementById('cidadeOutput2').value = data.localidade;
+            document.getElementById('ufOutput2').value = data.uf;
           } else {
-            document.getElementById('adressOutput').value = 'Endereço não encontrado para o endereço informado.';
+            document.getElementById('adressOutput2').value = 'Endereço não encontrado para o endereço informado.';
           }
         })
         .catch(error => {
