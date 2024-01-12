@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <title>BUSCA CEP/ENDEREÇO</title>
 </head>
 <body>
@@ -29,9 +33,8 @@
             </div>
 
             <div class="form-group col-md-3">
-              <select id="inputState" class="form-control">
-                <option selected>Select</option>
-                <option>...</option>
+              <select id="mySelect" class="form-control" onchange="selecionarOptativo()">
+                <option selected >Select</option>
               </select>
             </div>
           </div>
@@ -166,17 +169,19 @@
       <section class="mb-4">
 
         <!-- Google -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-google"></i
-        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://giovanefernandes.com/" role="button" target="_blank" 
+          ><i class="fab fa-google" >
+            <!--<img src="https://cdn-icons-png.flaticon.com/512/5988/5988512.png" style="color: white" />-->
+          </i>
+        </a>
 
         <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-linkedin-in"></i
+        <a class="btn btn-outline-light btn-floating m-1" href="http://lattes.cnpq.br/5440932749354672" role="button" target="_blank" 
+          ><i class="ai ai-lattes"></i
         ></a>
 
         <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Giovane-F-Moreira" role="button" target="_blank" 
           ><i class="fab fa-github"></i
         ></a>
       </section>
@@ -186,8 +191,8 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2020 Copyright: MDBootstrap.com <b>DEVELOP</b>
+      <a class="text-white" href="https://giovanefernandes.com/" target="_blank">  Giovane F. Moreira</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -196,6 +201,16 @@
   <!-- End of .container -->
 
   <script>
+    function selecionarOptativo1(){
+      console.log("Entrou");
+    }
+
+    function selecionarOptativo(){
+      let selecionado = resultadoSelecionadoElement.textContent = "Opção selecionada: " + selectElement.value;
+
+      console.log("Opção: "+selecionado);
+    }
+
     function getCEP() {
 
       let address = document.getElementById('addressInput').value;
@@ -211,20 +226,37 @@
         .then(response => response.json())
         .then(data => {
 
-          if (!data.erro) {
-            document.getElementById('cepOutput').value = data["0"].cep;
-            document.getElementById('complementoOutput1').value = data["0"].complemento;
-            document.getElementById('bairroOutput1').value = data["0"].bairro;
-            document.getElementById('cidadeOutput1').value = data["0"].localidade;
-            document.getElementById('ufOutput1').value = data["0"].uf;
-            console.log(data["0"].cep);
-          } else {
-            document.getElementById('cepOutput').value = 'CEP não encontrado para o endereço informado.';
-          }
-        })
-        .catch(error => {
-          console.error('Erro ao obter CEP:', error);
-        });
+      var selectElement = document.getElementById("mySelect");
+
+      // Limpar todas as opções existentes
+      selectElement.innerHTML = '';
+
+      // Adicionar a opção padrão "Escolha"
+      var escolhaOption = document.createElement("option");
+
+      escolhaOption.textContent = "Escolha";
+      selectElement.appendChild(escolhaOption);
+
+      // Iterar sobre o array e adicionar opções ao select
+      for (var i = 0; i < data.length; i++) {
+        var optionElement = document.createElement("option");
+        optionElement.textContent = data[i].bairro;
+        selectElement.appendChild(optionElement);
+      }
+
+        if (!data.erro) {
+          document.getElementById('cepOutput').value = data["0"].cep;
+          document.getElementById('complementoOutput1').value = data["0"].complemento;
+          document.getElementById('bairroOutput1').value = data["0"].bairro;
+          document.getElementById('cidadeOutput1').value = data["0"].localidade;
+          document.getElementById('ufOutput1').value = data["0"].uf;
+        } else {
+          document.getElementById('cepOutput').value = 'CEP não encontrado para o endereço informado.';
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao obter CEP:', error);
+      });
     }
 
     function getAdress() {
